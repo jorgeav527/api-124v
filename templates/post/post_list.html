@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Contenido</th>
+                <th>Fecha de Creación</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post['id'] }}</td>
+                    <td>{{ post['title'] }}</td>
+                    <td>{{ post['content'] }}</td>
+                    <td>{{ post['created'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
