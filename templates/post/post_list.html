@@ -8,6 +8,7 @@
                 <th>Título</th>
                 <th>Contenido</th>
                 <th>Fecha de Creación</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +18,9 @@
                     <td>{{ post['title'] }}</td>
                     <td>{{ post['content'] }}</td>
                     <td>{{ post['created'] }}</td>
+                    <td>
+                        <a href="{{ url_for('update_one_post', post_id=post['id']) }}" class="btn btn-warning btn-sm">Editar</a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
