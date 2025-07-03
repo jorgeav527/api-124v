@@ -20,6 +20,9 @@
                     <td>{{ post['created'] }}</td>
                     <td>
                         <a href="{{ url_for('update_one_post', post_id=post['id']) }}" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="{{ url_for('delete_one_post', post_id=post['id']) }}" method="POST">
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este post?');">Eliminar</button>
+                        </form>
                     </td>
                 </tr>
             {% endfor %}
